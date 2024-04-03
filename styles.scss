@@ -1,0 +1,208 @@
+$primary-color: #1e90ff;
+$secondary-color: black;
+$ternary-color: white;
+$border-color: rgb(11, 72, 227);
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+// .nav {
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   width: fit-content;
+//   color: $ternary-color;
+//   background-color: $primary-color;
+//   border-bottom: 4px solid $primary-color;
+
+//   &__item {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     gap: 10px;
+//     width: fit-content;
+//     padding: 5px;
+//     list-style: none;
+//     letter-spacing: 2px;
+//     background: $primary-color;
+//     // border: 1px solid $boder-color;
+//     position: relative;
+//     transition: 2s all;
+
+//     .nav__link {
+//       padding: 20px;
+//     }
+
+//     .plus {
+//       color: $ternary-color;
+//     }
+
+//     &:nth-child(n + 2) {
+//       background-color: $secondary-color;
+//       color: $ternary-color;
+//     }
+
+//      .subnav {
+//       display: block;
+//       .subnav__item {
+
+//         .subnav__link {
+//           padding: 10px;
+//         }
+//       }
+//     }
+
+//     &:hover .subnav {
+//       display: flex;
+//       position: absolute;
+//       top: 100%;
+//       left: 10px;
+//       flex-direction: column;
+//       // width: 120px;
+//       gap: 30px;
+//       color: $ternary-color;
+//       background-color: $primary-color;
+
+//       // &.sub-subnav {
+//       //   display: none;
+//       //   list-style: none;
+//       //   color: $ternary-color;
+//       // }
+
+//       &__item:hover {
+//         background-color: $boder-color;
+
+//         & .sub-subnav {
+//           display: flex;
+//           position: absolute;
+//           top: 10px;
+//           left: 100%;
+//           flex-direction: column;
+//           gap: 20px;
+//           width: 100px;
+//           color: $ternary-color;
+//           background-color: $primary-color;
+
+//           &__item {
+//             &__link {
+//               padding: 10px;
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     & .subnav {
+//       display: none;
+//       // list-style: none;
+//       color: $ternary-color;
+
+//       .subnav__item {
+//         .sub-subnav {
+//           display: none;
+//           // list-style: none;
+//           color: $ternary-color;
+//         }
+//       }
+//     }
+//   }
+// }
+
+.nav {
+  display: flex;
+  width: fit-content;
+  letter-spacing: 2px;
+  color: $ternary-color;
+  background-color: $primary-color;
+  border-bottom: 4px solid $primary-color;
+
+  .nav__item {
+    position: relative;
+    width: fit-content;
+    letter-spacing: 2px;
+    background: $primary-color;
+    transition: 2s all;
+
+    &:nth-child(n + 2) {
+      background-color: $secondary-color;
+      color: $ternary-color;
+    }
+
+    .plus {
+      color: $ternary-color;
+    }
+
+    .nav__link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .subnav {
+      display: none;
+
+      .subnav__item {
+        .sub-subnav {
+          display: none;
+        }
+      }
+    }
+
+    &:hover .subnav {
+      position: absolute;
+      top: 55px;
+      left: 5px;
+      display: flex;
+      flex-direction: column;
+      color: $ternary-color;
+      background-color: $primary-color;
+      z-index: 10;
+
+      .subnav__item {
+        position: relative;
+        border: 1px solid $border-color;
+        border-collapse: collapse;
+
+        &:hover {
+          background-color: $border-color;
+        }
+
+        .subnav__link {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 60px;
+          padding: 15px;
+          white-space: nowrap;
+          letter-spacing: 2px;
+        }
+
+        &:hover .sub-subnav {
+          position: absolute;
+          top: 10px;
+          left: 95%;
+          display: flex;
+          flex-direction: column;
+          color: $ternary-color;
+          background-color: $primary-color;
+          z-index: 10;
+
+          .sub-subnav__item {
+            border: 1px solid $border-color;
+
+            .sub-subnav__link {
+              display: block;
+              padding: 15px 140px 15px 15px;
+              white-space: nowrap;
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
